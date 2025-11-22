@@ -59,18 +59,34 @@ El servidor estará disponible en `http://localhost:3000`
 
 ### Variables de Entorno (.env)
 
-Crea un archivo `.env` en la raíz del proyecto:
+1. **Copia el archivo de ejemplo:**
+```bash
+cp .env.example .env
+```
+
+2. **Edita el archivo `.env` con tus credenciales:**
 
 ```env
-# Conexión a MongoDB (local)
+# MONGODB LOCAL (para desarrollo)
 MONGO_URI=mongodb://localhost:27017/biblioteca_gamer
 
-# Conexión a MongoDB Atlas (nube)
-# MONGO_URI=mongodb+srv://usuario:contraseña@cluster.mongodb.net/biblioteca_gamer
+# MONGODB ATLAS (nube - reemplaza con tus credenciales)
+# MONGO_URI=mongodb+srv://tu_usuario:tu_contraseña@cluster0.xxxxx.mongodb.net/biblioteca_gamer
 
 # Puerto del servidor
 PORT=3000
 ```
+
+### Configuración de MongoDB Atlas
+
+1. **Crea una cuenta gratuita en [MongoDB Atlas](https://www.mongodb.com/atlas)**
+2. **Crea un cluster gratuito**
+3. **Ve a Database Access → Add Database User**
+4. **Ve a Network Access → Add IP Address (o 0.0.0.0/0 para desarrollo)**
+5. **Ve a Clusters → Connect → Connect your application**
+6. **Copia la URL de conexión y pégala en tu `.env`**
+
+⚠️ **Importante:** El archivo `.env` contiene credenciales sensibles y NO se sube al repositorio por seguridad.
 
 ### Base de Datos
 
